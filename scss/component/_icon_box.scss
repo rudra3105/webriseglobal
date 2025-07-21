@@ -1,0 +1,322 @@
+.tf-icon-box {
+    &.style-1 {
+        position: relative;
+        border-radius: 20px;
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            margin: -1px;
+            background-image: linear-gradient(
+                228deg,
+                rgba(117, 117, 117, 0.4) 0%,
+                rgba(255, 255, 255, 0) 26%
+            );
+            border-radius: inherit;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url(../images/backgroup/bg-box-icon.jpg)
+                rgba(0, 0, 0, 0.2) 50% / cover no-repeat;
+            border-radius: inherit;
+            opacity: 0;
+            z-index: 1;
+            transition: opacity 450ms ease;
+        }
+        .wrap {
+            border-radius: inherit;
+            padding: 32px 24px 23px;
+            position: relative;
+            z-index: 1;
+            background-color: var(--body-background-color);
+            transition: background-color 450ms ease;
+        }
+        .icon {
+            margin-bottom: 25px;
+        }
+        .title {
+            margin-bottom: 9px;
+        }
+        .content {
+            padding-right: 80px;
+            position: relative;
+        }
+        .btn-icon {
+            position: absolute;
+            bottom: 32px;
+            right: 24px;
+            width: 36px;
+            height: 36px;
+            border-radius: 999px;
+            background: linear-gradient(
+                263.54deg,
+                rgba(255, 255, 255, 0.1) -1.01%,
+                rgba(255, 255, 255, 0) 149.68%
+            );
+            @include flex(center, center);
+            color: var(--white);
+            transform: rotate(0);
+            &:hover {
+                transform: rotate(-45deg);
+            }
+        }
+        &:hover {
+            .wrap {
+                background-color: transparent;
+            }
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &.style-2 {
+        padding: 48px 32px 18px;
+        height: 216px;
+        position: relative;
+        .content {
+            position: relative;
+            z-index: 5;
+            height: 100%;
+        }
+        .icon {
+            margin-bottom: 11px;
+        }
+        .title {
+            margin-bottom: 2px;
+        }
+    }
+
+    &.style-3 {
+        padding: 24px 24px 17px;
+        border: 1px solid;
+        position: relative;
+        border-image: linear-gradient(
+                269.94deg,
+                rgba(166, 149, 243, 0.2) -14.99%,
+                rgba(166, 149, 243, 0.1) -6.8%,
+                rgba(166, 149, 243, 0.8) 50.52%,
+                rgba(166, 149, 243, 0.1) 101.59%,
+                rgba(166, 149, 243, 0.2) 110.99%
+            )
+            1;
+        transition: 350ms ease;
+        transition-property: background-color, box-shadow;
+        &:hover {
+            box-shadow: 0px 30px 50px -8px rgba(132, 35, 255, 0.07);
+            background-color: var(--white);
+        }
+    }
+    &.style-4 {
+        padding: 46px 30px 46px 42px;
+        border-radius: 20px;
+        background-color: var(--white);
+        @include transition3();
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .icon {
+            margin-bottom: 31px;
+        }
+        .content {
+            margin-bottom: 64px;
+        }
+        &:hover {
+            box-shadow: 0px 6px 67px rgba(0, 0, 0, 0.01),
+                0px 5px 25px rgba(0, 0, 0, 0.05),
+                0px 28px 17px rgba(0, 0, 0, 0.09),
+                0px 13px 28px rgba(0, 0, 0, 0.1);
+            .tf-btn-effec-arrow {
+                .button-text {
+                    background-color: var(--primary);
+                    color: var(--white);
+                }
+                .button-icon {
+                    background-color: var(--primary);
+                    color: var(--white);
+                }
+            }
+        }
+    }
+    &.style-5 {
+        position: relative;
+        padding: 90px 36px 36px;
+        border-radius: 16px;
+        background-image: url(../images/backgroup/bg-box-icon-2.png);
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-color: var(--white);
+        .count {
+            position: absolute;
+            top: 60px;
+            right: 65px;
+            color: #d9dce3;
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: -0.96px;
+        }
+    }
+}
+
+.dot-border {
+    &::after,
+    &::before {
+        position: absolute;
+        display: inline-block;
+        content: "";
+        width: 3px;
+        height: 3px;
+        background-color: var(--sub-color);
+    }
+    &.dot-1 {
+        &::after {
+            top: -2px;
+            left: -2px;
+        }
+        &::before {
+            bottom: -2px;
+            left: -2px;
+        }
+    }
+    &.dot-2 {
+        &::after {
+            top: -2px;
+            right: -2px;
+        }
+        &::before {
+            bottom: -2px;
+            right: -2px;
+        }
+    }
+}
+
+.border-feature,
+.corner-feature {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+.border-x {
+    background: linear-gradient(
+        90deg,
+        rgba(250, 246, 255, 0.4) 0%,
+        rgba(250, 246, 255, 0) 25%,
+        rgba(250, 246, 255, 0.2) 50%,
+        rgba(250, 246, 255, 0) 75%,
+        rgba(250, 246, 255, 0.4) 100%
+    );
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    &.top {
+        top: 0;
+    }
+    &.bottom {
+        bottom: 0;
+    }
+}
+.border-y {
+    background: linear-gradient(
+        180deg,
+        rgba(126, 106, 185, 0.12) 0%,
+        rgba(126, 106, 185, 0.02) 25%,
+        rgba(126, 106, 185, 0.2) 50%,
+        rgba(126, 106, 185, 0.02) 75%,
+        rgba(126, 106, 185, 0.12) 100%
+    );
+    height: 100%;
+    width: 1px;
+    position: absolute;
+    &.left {
+        left: 0;
+    }
+    &.right {
+        right: 0;
+    }
+}
+.corner-bottom,
+.corner-top {
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 3px;
+    background-color: #dcd5ef;
+}
+.corner-bottom {
+    &.right {
+        right: -1px;
+        bottom: -1px;
+    }
+    &.left {
+        left: -1px;
+        bottom: -1px;
+    }
+}
+.corner-top {
+    &.left {
+        top: -1px;
+        left: -1px;
+    }
+    &.right {
+        top: -1px;
+        right: -1px;
+    }
+}
+.line-corner {
+    position: relative;
+    &.x {
+        &::after,
+        &::before {
+            position: absolute;
+            content: "";
+            width: 32px;
+            height: 1px;
+            top: 1px;
+        }
+        &::after {
+            background: linear-gradient(
+                270deg,
+                rgba(250, 246, 255, 0.5) 0%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            right: 0;
+        }
+        &::before {
+            background: linear-gradient(
+                90deg,
+                rgba(250, 246, 255, 0.5) 0%,
+                rgba(255, 255, 255, 0) 100%
+            );
+        }
+    }
+    &.y {
+        &::after,
+        &::before {
+            position: absolute;
+            content: "";
+            width: 1px;
+            height: 32px;
+            left: 1px;
+        }
+        &::after {
+            background: linear-gradient(
+                180deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(250, 246, 255, 0.5) 100%
+            );
+            bottom: 0;
+        }
+        &::before {
+            background: linear-gradient(
+                180deg,
+                rgba(250, 246, 255, 0.5) 0%,
+                rgba(255, 255, 255, 0) 100%
+            );
+        }
+    }
+}

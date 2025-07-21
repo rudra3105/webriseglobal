@@ -1,0 +1,162 @@
+.canvas-wrapper {
+    padding: 0;
+    isolation: isolate;
+    height: 100%;
+    width: 100%;
+    max-height: none;
+    display: grid;
+    grid-auto-rows: auto minmax(0, 1fr) auto;
+    align-content: start;
+}
+.canvas-body {
+    background-color: var(--secondary);
+    overscroll-behavior-y: contain;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: var(--bg-scrollbar-track);
+    }
+    &::-webkit-scrollbar-thumb {
+        background: var(--bg-scrollbar-thumb);
+        border-radius: 4px;
+    }
+}
+.canvas-header {
+    background-color: var(--secondary);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .close-filter {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        border: 1px solid var(--dark-color2);
+        color: var(--white);
+    }
+}
+.offcanvas-backdrop,
+.overlay-filter {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    position: fixed;
+    background: #000000b3;
+    opacity: 0.7;
+    backdrop-filter: blur(10px);
+    @include transition3();
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        z-index: 9999;
+    }
+}
+
+.offcanvas-search {
+    height: max-content !important;
+    background-color: var(--black);
+    z-index: 99999;
+    > .btn-close-search {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 30px;
+        height: 30px;
+        font-size: 22px;
+        @include flex(center, center);
+        z-index: 1;
+        background-color: transparent;
+        border: 1px solid var(--mono-gray3);
+        color: var(--mono-gray3);
+        border-radius: 8px;
+        @include transition3();
+        &:hover {
+            border-color: var(--white);
+            color: var(--white);
+        }
+    }
+    .offcanvas-body {
+        padding: 60px 0;
+    }
+    .form-search-courses {
+        overflow: hidden;
+        border-radius: 4px;
+        .button-submit button {
+            position: absolute;
+            height: 36px;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            border-radius: 4px;
+        }
+    }
+    fieldset input {
+        border-radius: 4px;
+    }
+}
+
+.sildebar-fiiler {
+    transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    .point::before {
+        background-color: var(--primary);
+    }
+    .filter,
+    .categories {
+        border-radius: 12px;
+        background-color: var(--dark-color2);
+    }
+    .categories {
+        padding: 35px 28px;
+        margin-bottom: 52px;
+    }
+    .wrap-categories {
+        display: grid;
+        gap: 20px;
+    }
+    .categories-item {
+        a {
+            color: var(--mono-gray);
+        }
+        .sub-menu {
+            margin-top: 10px;
+            padding-left: 40px;
+            display: grid;
+            gap: 12px;
+        }
+        &:hover {
+            .categories-title {
+                a {
+                    color: var(--white);
+                }
+            }
+        }
+    }
+    .filter {
+        padding: 40px 28px;
+    }
+    form.style-line-bot {
+        fieldset input {
+            font-size: 18px;
+            &::placeholder {
+                font-size: 18px;
+            }
+        }
+        button svg path {
+            stroke: var(--mono-gray2);
+        }
+    }
+    .wg-filter {
+        border-bottom: 1px solid var(--mono-gray2);
+    }
+    &.show {
+        transform: none;
+    }
+}

@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+
+// settings
+$font-main: "Inter", sans-serif;
+$font-main2: "Red Hat Display", sans-serif;
+$font-main3: "IBM Plex Sans", sans-serif;
+$fontIcon: "icomoon";
+
+:root {
+    --body-background-color: #1f2025;
+    --body-background-color2: #131216;
+    --sub-color: #e5e0ff;
+    --sub-color2: #5736fd;
+    --primary: #0c5af5;
+    --secondary: #16171b;
+    --third: #f9f9fa;
+    --four: #eaecf7;
+    --five: #f2f0ed;
+    --six: #e4e0dc;
+    --body-color: #7e8695;
+    --white: #ffffff;
+    --green: #2df494;
+    --mono-gray: #7e8695;
+    --mono-gray2: #5f697c;
+    --mono-gray3: #474e5c;
+    --mono-gray4: #9da5b4;
+    --mono-gray5: #2b303b;
+    --mono-gray6: #f0f2f4;
+    --mono-gray7: #bbc1ce;
+    --mono-gray8: #8d8d8d;
+    --mono-gray9: #d9dce3;
+    --mono-gray10: #f0f2f4;
+    --mono-gray11: #666666;
+    --black: #000000;
+    --bright-orange: #f24903;
+    --dark-color: #111317;
+    --dark-color2: #2b303b;
+    --dark-color3: #222126;
+    --dark-color4: #151515;
+    --color-text: #494949;
+    --color-text2: #808080;
+    --color-text3: #f0f2f4;
+    --border: #d9dce3;
+}
+
+.primary-2 {
+    --primary: #f24903;
+}
+
+.primary-3 {
+    --primary: #2db04c;
+}
+
+.primary-4 {
+    --primary: #5736fd;
+}

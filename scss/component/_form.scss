@@ -1,0 +1,440 @@
+form {
+    position: relative;
+    z-index: 30;
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"] {
+        font-family: $font-main;
+        outline: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 10px 18px 15px 18px;
+        width: 100%;
+        background: var(--dark-color);
+        color: var(--mono-gray);
+        font-weight: 500;
+        border-radius: 12px;
+        height: 46px;
+        box-sizing: border-box;
+        border: none;
+        &::placeholder {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            color: var(--mono-gray);
+        }
+    }
+    button,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+        background-color: transparent;
+        overflow: hidden;
+        padding: 0;
+    }
+    textarea {
+        height: 180px;
+    }
+    &.style-line-bot {
+        fieldset {
+            input {
+                padding: 8px 40px 9px 0px;
+                border-bottom: 1px solid var(--mono-gray3);
+                border-radius: unset;
+                height: max-content;
+                background-color: transparent;
+            }
+        }
+        button {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 0;
+            background-color: transparent;
+            border: 0;
+            i {
+                font-size: 20px;
+            }
+            svg path {
+                stroke: var(--white);
+            }
+            &:hover {
+                svg path {
+                    stroke: var(--primary);
+                }
+            }
+        }
+        &.style-2 {
+            fieldset {
+                input {
+                    color: var(--mono-gray9);
+                    border-color: var(--border);
+                    &::placeholder {
+                        color: var(--mono-gray9);
+                    }
+                }
+            }
+            button {
+                position: relative;
+                transform: unset;
+            }
+        }
+    }
+}
+
+.tecko-select {
+    position: relative;
+    select {
+        cursor: pointer;
+        width: 100%;
+        padding: 15px 18px;
+        border-radius: 12px;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: transparent;
+        @include transition3;
+        background-color: var(--dark-color);
+        border: none !important;
+        height: 46px;
+        color: var(--mono-gray);
+        option {
+            border-bottom: 1px solid var(--dark-color);
+            background-color: var(--white);
+            &:checked {
+                background-color: #f0f0f0;
+            }
+            &:hover {
+                background-color: #f0f0f0;
+            }
+        }
+        &:focus-visible {
+            outline: none !important;
+        }
+    }
+    &::after {
+        font-family: $fontIcon;
+        position: absolute;
+        content: "\e938";
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        z-index: -1;
+    }
+    &:hover {
+        select {
+            border: none;
+        }
+    }
+   
+    &.style-2 {
+        &::after {
+            font-size: 16px;
+            z-index: 1;
+            color: var(--white);
+        }
+    }
+}
+
+.form-request {
+    p {
+        a {
+            color: var(--mono-gray);
+            position: relative;
+            &::after {
+                background-color: var(--mono-gray);
+                content: "";
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+                height: 1px;
+                left: 0;
+                @include transition3();
+            }
+            &:hover {
+                &::after {
+                    background-color: var(--primary);
+                }
+            }
+        }
+    }
+
+    &.style-1 {
+        textarea {
+            height: 129px;
+        }
+    }
+}
+
+.form-search {
+    position: relative;
+    fieldset {
+        input {
+            border-bottom: 1px solid var(--mono-gray3);
+            background-color: var(--secondary);
+            height: max-content;
+        }
+    }
+}
+
+.send-mail {
+    fieldset {
+        input {
+            color: #999999;
+            border-color: #bbbbbb !important;
+        }
+    }
+}
+
+.form-newsletter {
+    fieldset {
+        input {
+            background-color: var(--dark-color2);
+        }
+    }
+}
+
+.form-leave-comment {
+    .grid-3 {
+        gap: 10px 16px;
+    }
+    textarea {
+        height: 208px;
+        margin-bottom: 16px;
+    }
+}
+
+.form-newsletter {
+    fieldset {
+        input {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+    &.style-1 {
+        .subscribe-content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+        }
+        fieldset {
+            flex: 1;
+            input {
+                border-radius: 4px;
+                font-weight: 400;
+                background: #00000014;
+            }
+        }
+        &.has-border {
+            fieldset {
+                flex: 1;
+                input {
+                    border: 1px solid #d9dce3;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+    &.style-2 {
+        max-width: 212px;
+        background-image: url(../images/item/border.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        aspect-ratio: 5.1707317073;
+        .subscribe-content {
+            display: flex;
+            align-items: center;
+        }
+        fieldset {
+            flex: 1 0 auto;
+            input {
+                background: transparent;
+                height: 40px;
+                border-radius: 37px;
+                max-width: 172px;
+                padding: 12px 0 10px 16px;
+            }
+        }
+        .subscribe-button {
+            height: 28px;
+            width: 28px;
+            border-radius: 999px;
+            background-color: var(--primary);
+            flex: 0 0 auto;
+            aspect-ratio: 1;
+            padding: 5px;
+            margin-right: 6px;
+            color: var(--white);
+            @include transition3();
+            &:hover {
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+
+.wrap-sort {
+    max-width: 377px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    .tf-dropdown-sort {
+        flex: 1;
+    }
+}
+
+.tf-dropdown-sort {
+    position: relative;
+    border-radius: 12px;
+    padding: 0 12px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: var(--white);
+    .icon {
+        font-size: 20px;
+    }
+    .btn-select {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4px;
+        text-wrap: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .dropdown-menu {
+        width: 100%;
+        border: 0;
+        padding: 15px 5px;
+        border-radius: 0;
+        max-height: 68vh;
+        isolation: isolate;
+        overscroll-behavior-y: contain;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: var(--border);
+        }
+        &::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+    }
+    .select-item {
+        position: relative;
+        padding: 0 15px;
+        line-height: 30px;
+        width: 100%;
+        @include transition3;
+        &.active {
+            background-color: var(--line);
+            color: var(--main);
+            padding: 0 15px !important;
+            border: 0 !important;
+        }
+        &:hover {
+            background-color: var(--border);
+            color: var(--dark-color);
+        }
+    }
+    &:hover {
+        border-color: var(--bord);
+    }
+}
+
+.tf-check {
+    position: relative;
+    background: transparent;
+    cursor: pointer;
+    outline: 0;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background-color: var(--white) !important;
+    &:checked {
+        background-color: var(--primary) !important;
+        &::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    &::before {
+        font-family: $fontIcon;
+        content: "\e948";
+        position: absolute;
+        color: var(--white);
+        opacity: 0;
+        left: 2px;
+        top: 2px;
+        font-size: 16px;
+        transform: scale(0.5);
+        @include transition3;
+    }
+}
+
+.box-fieldset-item {
+    display: grid;
+    gap: 20px;
+    .fieldset-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
+.form-project {
+    fieldset {
+        input {
+            padding: 7px 40px 4px 0px !important;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            &::placeholder {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+            }
+        }
+    }
+    .tf-btn {
+        height: 52px;
+        padding: 0 29px;
+        span {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+    }
+}
